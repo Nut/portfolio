@@ -1,10 +1,20 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #040404;
   color: #ffffff;
+}
+
+@font-face {
+  font-family: oiYou;
+  src: url('assets/fonts/Oi_You.otf');
+}
+
+@font-face {
+  font-family: oiMate;
+  src: url('assets/fonts/Oi_Mate.otf');
 }

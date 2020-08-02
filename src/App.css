@@ -23,8 +23,18 @@
 
 .start-headline {
   width: 100%;
-  font-size: 7vw;
-  font-family: 'Courier New', Courier, monospace;
+  font-size: 6vw;
+  font-family: oiYou;
+  color: #ffd600;
+  z-index: 5;
+}
+
+.start-headline-bg {
+  width: 100%;
+  font-size: 6vw;
+  font-family: oiMate;
+  color: #952626;
+  z-index: 0;
 }
 
 .arrow {
