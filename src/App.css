@@ -21,22 +21,6 @@
   z-index: 1;
 }
 
-.start-headline {
-  width: 100%;
-  font-size: 6vw;
-  font-family: oiYou;
-  color: #ffd600;
-  z-index: 5;
-}
-
-.start-headline-bg {
-  width: 100%;
-  font-size: 6vw;
-  font-family: oiMate;
-  color: #952626;
-  z-index: 0;
-}
-
 .arrow {
   border: solid #ffffff;
   border-width: 0 10px 10px 0;

@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://nut.github.io/portfolio",
   "dependencies": {
+    "@researchgate/react-intersection-observer": "^1.3.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -11,10 +12,12 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/styled-components": "^5.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "react-spring": "^8.0.27",
+    "styled-components": "^5.1.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -26,7 +29,9 @@
     "deploy": "gh-pages -d build",
     "clean": "gh-pages-clean",
     "lint": "eslint */**/*.{js,ts,tsx} --quiet",
-    "lint:fix": "eslint */**/*.{js,ts,tsx} --quiet --fix"
+    "lint:fix": "eslint */**/*.{js,ts,tsx} --quiet --fix",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,6 +49,11 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@storybook/react": "^5.3.19",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^3.7.1",
     "eslint-config-prettier": "^6.11.0",
