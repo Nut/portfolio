@@ -51,14 +51,14 @@ const HeadlineBackground = styled.div`
 
 export const StartHeadline = (): JSX.Element => {
   const [index, set] = useState<number>(0);
-  useEffect(
-    () =>
-      void setInterval(
-        () => set((state) => (state + 1) % startText.length),
-        2000
-      ),
-    []
-  );
+  useEffect(() => {
+    const interval = setInterval(
+      () => set((state) => (state + 1) % startText.length),
+      2000
+    );
+
+    return () => clearInterval(interval);
+  }, []);
 
   const transitions = useTransition(startText[index], (item) => item.id, {
     from: {
@@ -76,7 +76,7 @@ export const StartHeadline = (): JSX.Element => {
       opacity: 0,
       transform: 'translate3d(-50%,-60%,0)'
     },
-    config: config.stiff
+    config: { ...config.stiff, duration: 500 }
   });
   return (
     <Style>

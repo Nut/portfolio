@@ -17,7 +17,21 @@ export const App = (): JSX.Element => {
 
   const [ref] = useIntersectionObserver(handleChange, { threshold: 0 });
 
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const props = useSpring({
+    opacity: 1,
+    transform: 'scale(1)',
+    top: '90%',
+    position: 'absolute',
+    left: '50%',
+    from: {
+      opacity: 0,
+      transform: 'scale(0)',
+      top: '90%',
+      position: 'absolute',
+      left: '50%'
+    },
+    delay: 500
+  });
 
   return (
     <div className="App">
@@ -28,10 +42,7 @@ export const App = (): JSX.Element => {
             {visible && <StartHeadline />}
           </div>
           <animated.div style={props}>
-            <div
-              className="arrow-wrap"
-              onClick={() => parallax.current.scrollTo(1)}
-            >
+            <div onClick={() => parallax.current.scrollTo(1)}>
               <i className="arrow down"></i>
             </div>
           </animated.div>
