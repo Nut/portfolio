@@ -4,9 +4,6 @@ import { App } from './App';
 import * as serviceWorker from './serviceWorker';
 import { createGlobalStyle } from 'styled-components';
 
-import OiYou from './assets/fonts/OiYou.otf';
-import OiMate from './assets/fonts/OiMate.otf';
-
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -17,16 +14,6 @@ const GlobalStyle = createGlobalStyle`
   -moz-osx-font-smoothing: grayscale;
   background-color: #040404;
   color: #ffffff;
-  }
-
-  @font-face {
-    font-family: oiYou;
-    src: url(${OiYou});
-  }
-  
-  @font-face {
-    font-family: oiMate;
-    src: url(${OiMate});
   }
 `;
 

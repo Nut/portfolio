@@ -1,11 +1,21 @@
-import React, { MutableRefObject } from 'react';
+import React, { MutableRefObject, useState } from 'react';
 import './App.css';
 import { animated, useSpring } from 'react-spring';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import { StartHeadline } from './components/StartHeadline';
+import { useIntersectionObserver } from '@researchgate/react-intersection-observer';
+import { ChangeHandler } from '@researchgate/react-intersection-observer/typings/src/types';
 
 export const App = (): JSX.Element => {
   const parallax = React.useRef<Parallax>() as MutableRefObject<Parallax>;
+
+  const [visible, setVisible] = useState<boolean>(false);
+
+  const handleChange: ChangeHandler = (entry) => {
+    setVisible(entry.isIntersecting);
+  };
+
+  const [ref] = useIntersectionObserver(handleChange, { threshold: 0 });
 
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
@@ -14,7 +24,9 @@ export const App = (): JSX.Element => {
       <div className="noise" />
       <Parallax pages={2} scrolling={true} ref={parallax}>
         <ParallaxLayer offset={0} speed={0.5}>
-          <StartHeadline />
+          <div className="center-headline" ref={ref}>
+            {visible && <StartHeadline />}
+          </div>
           <animated.div style={props}>
             <div
               className="arrow-wrap"
